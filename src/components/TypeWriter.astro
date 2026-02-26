@@ -1,0 +1,79 @@
+---
+// TypeWriter.astro
+interface Props {
+  phrases: string[];
+  typingSpeed?: number;
+  deletingSpeed?: number;
+  pauseDuration?: number;
+}
+
+const {
+  phrases,
+  typingSpeed = 100,
+  deletingSpeed = 50,
+  pauseDuration = 1500,
+} = Astro.props;
+---
+
+<span class="typewriter"><span class="typewriter__text"></span><span class="typewriter__cursor">|</span></span>
+
+<script define:vars={{ phrases, typingSpeed, deletingSpeed, pauseDuration }}>
+  const el = document.querySelector(".typewriter__text");
+  const wrapper = document.querySelector(".typewriter");
+
+  const longestPhrase = phrases.reduce((a, b) => a.length > b.length ? a : b, '');
+  el.textContent = longestPhrase;
+  wrapper.style.minWidth = (el.offsetWidth + 2) + "px";
+  el.textContent = '';
+
+  let phraseIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function type() {
+    const current = phrases[phraseIndex];
+
+    if (isDeleting) {
+      el.textContent = current.substring(0, charIndex--);
+    } else {
+      el.textContent = current.substring(0, charIndex++);
+    }
+
+    let delay = isDeleting ? deletingSpeed : typingSpeed;
+
+    if (!isDeleting && charIndex === current.length + 1) {
+      delay = pauseDuration;
+      isDeleting = true;
+    } else if (isDeleting && charIndex === 0) {
+      isDeleting = false;
+      phraseIndex = (phraseIndex + 1) % phrases.length;
+    }
+
+    setTimeout(type, delay);
+  }
+
+  type();
+</script>
+
+<style>
+  .typewriter {
+    display: inline-block;
+    vertical-align: baseline;
+  }
+
+  .typewriter__text {
+    display: inline;
+    vertical-align: baseline;
+  }
+
+  .typewriter__cursor {
+    display: inline;
+    vertical-align: baseline;
+    margin-left: 1px;
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes blink {
+    50% { opacity: 0; }
+  }
+</style>
