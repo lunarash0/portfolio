@@ -3,7 +3,7 @@ title: Miner Legacy Update 1
 publishDate: 2026-02-28 22:02
 img: /assets/miner-legacy/coffee.png
 img_alt: No alt.
-description: First Post Miner Legacy
+description: Second Post Miner Legacy
   
 tags:
   - Founder
