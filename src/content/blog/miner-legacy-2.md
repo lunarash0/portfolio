@@ -25,7 +25,7 @@ So many people show interest in my project and I can't wait to show more.
 - Sharp
 
 
-*If you want to suggest anything feel free to send me a message below.*
+*If you want to suggest anything feel free to send me a message below. Please note that suggestions will not be credited in the game.*
 
 
 Thanks, Ash.
