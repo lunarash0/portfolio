@@ -1,7 +1,7 @@
 ---
 title: Miner Legacy Main
 publishDate: 2026-02-28 04:33
-img: /assets/pickaxe.png
+img: /assets/miner-legacy/pickaxe.png
 img_alt: No alt.
 description: First Post Miner Legacy
   
