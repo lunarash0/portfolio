@@ -26,7 +26,7 @@ I don't want to rush this project but I have so much excitement.
 ### Gameplay
 
 After so much time I can finally show you guys some actual testing that I have been doing for Miner Legacy.
-![Gameplay](/images/miner-legacy/gameplay-1.png)
+![Gameplay](/assets/miner-legacy/gameplay-1.png)
 
 
 I'm working on redesigns for the tiles but for now this is a placeholder to demonstrate some of the game.
